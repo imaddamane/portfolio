@@ -1,0 +1,36 @@
+/* Project page background treatment */
+body.project-page {
+    position: relative;
+    isolation: isolate;
+    background-color: #020202;
+    background-image: linear-gradient(180deg, #050505 0%, #020202 100%);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+body.project-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-color: #020202;
+    background-image:
+        radial-gradient(circle at 18% 22%, rgba(255, 107, 0, 0.18) 0 8%, transparent 24%),
+        radial-gradient(circle at 82% 28%, rgba(255, 136, 0, 0.14) 0 10%, transparent 22%),
+        radial-gradient(circle at 55% 82%, rgba(255, 94, 0, 0.12) 0 12%, transparent 24%),
+        repeating-linear-gradient(135deg, rgba(255, 107, 0, 0.08) 0 1px, transparent 1px 24px),
+        repeating-linear-gradient(45deg, rgba(255, 142, 0, 0.04) 0 1px, transparent 1px 18px);
+    background-attachment: fixed;
+    opacity: 0.95;
+    mix-blend-mode: screen;
+}
+
+body.project-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
+}
