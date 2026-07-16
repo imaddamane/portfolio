@@ -212,7 +212,7 @@ body:not(.project-page)::after {
 
     .gray-back {
         position: absolute;
-        bottom: 3280px;
+        bottom: 3290px;
         left: 0;
         width: 100%;
         z-index: -2;
@@ -464,7 +464,7 @@ body:not(.project-page)::after {
     .trusted {
         display: flex;
         justify-content: space-between;
-        margin-top: 65px;
+        margin-top: 75px;
         margin-right: 120px;
         margin-left: 120px;
         align-items: center;
