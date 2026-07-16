@@ -44,23 +44,25 @@ function initCarousel() {
   document.addEventListener('touchend', handleDragEnd);
   const carouselViewport = carouselTrack.closest('.carousel-container') || carouselTrack;
   carouselViewport.addEventListener('wheel', (e) => {
+    // 1. Prevent the page from scrolling
+    e.preventDefault();
+
     const absX = Math.abs(e.deltaX);
     const absY = Math.abs(e.deltaY);
-    const isHorizontalGesture = absX > absY || (e.shiftKey && absY >= absX);
-
-    if (!isHorizontalGesture) return;
-
-    const delta = e.shiftKey && absX < absY ? e.deltaY : e.deltaX;
+    
+    // 2. Capture the scroll direction, whether horizontal or vertical
+    const delta = absX > absY ? e.deltaX : e.deltaY;
+    
     if (delta === 0) return;
 
     carouselWheelAccumulation += Math.abs(delta);
     if (carouselWheelAccumulation < carouselWheelThreshold) {
-      e.preventDefault();
       return;
     }
 
-    e.preventDefault();
     carouselWheelAccumulation = 0;
+    
+    // 3. Navigate the carousel
     if (delta < 0) navigate('prev');
     else navigate('next');
   }, { passive: false });
@@ -158,7 +160,20 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
   window.addEventListener('pointermove', (e) => { if (!dragging) return; const delta = e.clientX - sX; setTranslate(startTranslate + delta, true); });
   function endDrag() { if (!dragging) return; dragging = false; snapToClosest(); }
   window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
-  container.addEventListener('wheel', (e) => { const absX = Math.abs(e.deltaX); const absY = Math.abs(e.deltaY); if (absY > absX && !e.shiftKey) return; e.preventDefault(); const delta = e.shiftKey && absX < absY ? e.deltaY : e.deltaX; setTranslate(currentTranslate - delta, true); clearTimeout(wheelTimeout); wheelTimeout = setTimeout(() => snapToClosest(), 120); }, { passive: false });
+  container.addEventListener('wheel', (e) => {
+    // 1. Prevent the page from scrolling
+    e.preventDefault(); 
+    
+    const absX = Math.abs(e.deltaX);
+    const absY = Math.abs(e.deltaY);
+    
+    // 2. Use the primary scroll direction (vertical or horizontal)
+    const delta = absX > absY ? e.deltaX : e.deltaY; 
+    
+    setTranslate(currentTranslate - delta, true); 
+    clearTimeout(wheelTimeout); 
+    wheelTimeout = setTimeout(() => snapToClosest(), 120); 
+  }, { passive: false });
   window.addEventListener('resize', () => { measure(); setTranslate(currentTranslate, true); });
   measure(); setTranslate(0, true);
   if (origCount > 0) { const middleStart = origCount; const firstOriginal = cards[middleStart]; if (firstOriginal) { const containerRect = container.getBoundingClientRect(); const centerX = containerRect.left + containerRect.width / 2; const rect = firstOriginal.getBoundingClientRect(); const delta = rect.left + rect.width / 2 - centerX; setTranslate(currentTranslate - delta, true); continuousBase = currentTranslate; } }
