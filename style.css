@@ -1807,3 +1807,28 @@ header {
         font-size: 0.9rem;
     }
 }
+
+
+@media (max-width: 768px) {
+    /* Add this rule to hide the navigation on mobile screens */
+    header {
+        display: none;
+    }
+
+    #mobile-blocker {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        /* mobile background uses provided image */
+        background-image: url("images/mobile_background/mobile.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+    }
+    
+    /* ... rest of your existing max-width: 768px styles ... */
+}
