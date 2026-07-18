@@ -1822,7 +1822,7 @@ header {
         position: fixed;
         inset: 0;
         /* mobile background uses provided image */
-        background-image: url("images/mobile_background/mobile.webp");
+        background-image: url("images/mobile_background/mobile.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
