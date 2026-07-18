@@ -1,12 +1,12 @@
 const itemsData = [
-  { title: 'EFA Español', color: '#ff6a00', url: 'efa_page.html', bgUrl: 'images/projects_covers/EFA PROJECT.png' },
   { title: 'Sawtlook', color: '#ff6a00', url: 'sawtlook_page.html', bgUrl: 'images/projects_covers/SAWTLOOK PROJECT.png' },
   { title: 'Elite Force', color: '#ff6a00', url: 'elite_force_page.html', bgUrl: 'images/projects_covers/elm lcover.png' },
+  { title: 'Arrivals Esports', color: '#ff6a00', url: 'arrivals_page.html', bgUrl: 'images/projects_covers/arrivals cover.png' },
+  { title: 'EFA Español', color: '#ff6a00', url: 'efa_page.html', bgUrl: 'images/projects_covers/EFA PROJECT.png' },
   { title: 'Elm Jersey', color: '#ff6a00', url: 'elm_jersey_page.html', bgUrl: 'images/projects_covers/jersey cover.png' },
   { title: 'Lalla Zaho', color: '#ff6a00', url: 'lalla_zaho_page.html', bgUrl: 'images/projects_covers/LALLA ZAHO PROJECT.png' },
   { title: 'Nord Phone', color: '#ff6a00', url: 'nord_phone_page.html', bgUrl: 'images/projects_covers/NORD PHONE PROJECT.png' },
-  { title: 'Mille Events', color: '#ff6a00', url: 'mille_events_page.html', bgUrl: 'images/projects_covers/MILLE EVENT PROJECT.png' },
-  { title: 'Arrivals Esports', color: '#ff6a00', url: 'arrivals_page.html', bgUrl: 'images/projects_covers/arrivals cover.png' }
+  { title: 'Mille Events', color: '#ff6a00', url: 'mille_events_page.html', bgUrl: 'images/projects_covers/MILLE EVENT PROJECT.png' }
 ];
 
 let currentIndex = 0;
