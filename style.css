@@ -1297,12 +1297,12 @@ body:not(.project-page)::after {
       background-position: center;
     }
 
-    .testimonial-section .avatar-1 { background-image: url("images/recomendations_pfp/hiba.webp"); }
-    .testimonial-section .avatar-2 { background-image: url("images/recomendations_pfp/malasombra and mohammed fj.webp"); }
-    .testimonial-section .avatar-3 { background-image: url("images/recomendations_pfp/fouad oubla.webp"); }
-    .testimonial-section .avatar-4 { background-image: url("images/recomendations_pfp/malasombra and mohammed fj.webp"); }
-    .testimonial-section .avatar-5 { background-image: url("images/recomendations_pfp/youssef_lechehab.webp"); }
-    .testimonial-section .avatar-6 { background-image: url("images/recomendations_pfp/aymen neya.webp"); }
+    .testimonial-section .avatar-1 { background-image: url("images/recomendations_pfp/hiba.jpg"); }
+    .testimonial-section .avatar-2 { background-image: url("images/recomendations_pfp/malasombra and mohammed fj.jpg"); }
+    .testimonial-section .avatar-3 { background-image: url("images/recomendations_pfp/fouad oubla.jpg"); }
+    .testimonial-section .avatar-4 { background-image: url("images/recomendations_pfp/malasombra and mohammed fj.jpg"); }
+    .testimonial-section .avatar-5 { background-image: url("images/recomendations_pfp/youssef_lechehab.jpg"); }
+    .testimonial-section .avatar-6 { background-image: url("images/recomendations_pfp/aymen neya.jpg"); }
 
     .testimonial-section .testimonial-name {
       font-size: 1.08rem;
